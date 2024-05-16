@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "../App";
-import { default as RestaurantById } from "../page/[id]";
+import RestaurantById from "../page/[id]";
 
 const Router = () => {
     return (

@@ -123,7 +123,7 @@ const HomePage = () => {
                         paddingBottom: "1rem",
                     }}
                 >
-                    <h1>Restoranlar</h1>
+                    <h1>Restorantlar</h1>
                 </Box>
 
                 <Box sx={{ flexGrow: 1, margin: "auto", maxWidth: "90%" }}>
@@ -153,11 +153,11 @@ const HomePage = () => {
                     </div>
                     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 1 }} spacing={0} marginTop={2}>
                         {filteredStores.slice(0, currentPage * itemsPerPage).map((restaurant, index) => (
-                            <Grid item xs={4} sm={6} md={4} key={index}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                                 <NavLink to={`/restaurant/${restaurant.id}`} style={navLinkStyle}>
                                     <Box marginBottom={4}>
                                         <Box
-                                            width={"95%"}
+                                            width={"100%"}
                                             height={"330px"}
                                             bgcolor={"#fff"}
                                             borderRadius={"20px"}

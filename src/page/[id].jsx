@@ -1,8 +1,8 @@
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import RestaurantCards from "../../../Express24-finish/src/page/restaurantCard";
 import Layout from "../components/layout/layout";
+import RestaurantCards from "../page/restaurantCard";
 
 function RestaurantById() {
     const { id } = useParams();
