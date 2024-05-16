@@ -1,5 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Layout from "../components/layout/layout";
+import HomePage from "./HomePage"; // Ensure this import path is correct based on your file structure
 
 function Private() {
   const [restaurants, setRestaurants] = useState([]);
@@ -45,62 +47,14 @@ function Private() {
   };
 
   return (
-    <>
-      <>
-        <h1>Restaurants</h1>
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-          <button
-            onClick={() => handleCategoryFilter("All")}
-            className={activeCategory === "All" ? "active-category-button" : "category-button"}
-          >
-            All Categories
-          </button>
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              onClick={() => handleCategoryFilter(category)}
-              className={activeCategory === category ? "active-category-button" : "category-button"}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <>
-          {filteredRestaurants.map((restaurant, index) => (
-            <>
-              <>
-                <
-                >
-                  <img style={{ width: "100%", height: "20vh" }} src={restaurant.cover} alt={restaurant.name} />
-                  <div style={{ padding: "10px", flexGrow: 1 }}>
-                    <h2>{restaurant.name}</h2>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
-                    
-                    <div
-                      style={{
-                        width: "40%",
-                        height: "5vh",
-                        backgroundColor: "#00FF40",
-                        borderRadius: "40px",
-                        textAlign: "center", // Updated textAlign
-                        color: "white",
-                        fontSize: "20px",
-                        paddingTop: "6px",
-                      }}
-                    >
-                      {restaurant.id}
-                    </div>
-                    
-                  </div>
-                </>
-              </>
-            </>
-          ))}
-        </>
-      </>
-    </>
+    <Layout>
+      <HomePage
+        restaurants={filteredRestaurants}
+        categories={categories}
+        activeCategory={activeCategory}
+        onCategoryFilter={handleCategoryFilter}
+      />
+    </Layout>
   );
 }
 
